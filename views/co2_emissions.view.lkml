@@ -3,6 +3,7 @@ view: co2_emissions {
     ;;
 
   dimension: country_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.country_id ;;
   }
