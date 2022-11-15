@@ -22,4 +22,15 @@ view: co2_emissions {
     type: count
     drill_fields: []
   }
+
+  measure: gmd {
+    type: average
+    sql: ${TABLE}.metricton_per_citizen ;;
+    precision: 2
+  }
+
+  measure: som_co2 {
+    type: sum
+    sql: ${TABLE}.metricton_per_citizen ;;
+  }
 }

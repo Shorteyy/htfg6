@@ -26,4 +26,20 @@ view: energy_sources {
     type: count
     drill_fields: []
   }
+
+  measure: som_nuclear {
+    type: sum
+    sql: ${TABLE}.nuclear;;
+  }
+
+  measure: som_fossil {
+    type: sum
+    sql: ${TABLE}.fossil_fuels;;
+  }
+
+  measure: som_renew {
+    type: sum
+    sql: ${TABLE}.renewable;;
+  }
+
 }

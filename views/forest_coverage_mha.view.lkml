@@ -3,6 +3,7 @@ view: forest_coverage_mha {
     ;;
 
   dimension: country_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.country_id ;;
   }
@@ -30,5 +31,30 @@ view: forest_coverage_mha {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: som_disturbed {
+    type: sum
+    sql: ${TABLE}.disturbed;;
+  }
+
+  measure: som_gain {
+    type: sum
+    sql: ${TABLE}.gain;;
+  }
+
+  measure: som_stable_forest {
+    type: sum
+    sql: ${TABLE}.stable_forest;;
+  }
+
+  measure: som_loss {
+    type: sum
+    sql: ${TABLE}.loss;;
+  }
+
+  measure: verschil {
+    type: sum
+    sql: ${TABLE}.gain - ${TABLE}.loss;;
   }
 }

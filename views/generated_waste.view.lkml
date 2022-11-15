@@ -3,6 +3,7 @@ view: generated_waste {
     ;;
 
   dimension: country_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.country_id ;;
   }
@@ -15,5 +16,10 @@ view: generated_waste {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: som_wast {
+    type: sum
+    sql: ${TABLE}.kg_per_citizen;;
   }
 }
